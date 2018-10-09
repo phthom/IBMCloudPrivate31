@@ -1,2 +1,10 @@
-# IBMCloudPrivate31
-IBM Cloud Private Labs with compatibility with version 3.1
+
+
+
+
+# Practical IBM Cloud Private Workshop
+
+
+![ICP Logo](./images/logoicp.png)
+
+### Now supports ICP version 3.1.0
