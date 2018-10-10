@@ -324,19 +324,6 @@ operator:x:37:37:Operator:/var:/bin/false
 nobody:x:65534:65534:nobody:/home:/bin/false
 ```
 
-So, what happened what it took the default ENTRYPOINT i.e. cat command and used the parameters that the CMD provided to run the command.
-
-Try to override the CMD by running the container with a non-existent file name:
-
-`docker run -it myimage somefile.txt`
-
-```console
-# docker run -it myimage somefile.txt
-cat: can't open 'somefile.txt': No such file or directory
-```
-
-You get the point?
-
 ### 2. Web Application
 
 Now, let us look at another Dockerfile shown below:
