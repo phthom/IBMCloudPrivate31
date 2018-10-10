@@ -166,11 +166,11 @@ You should see a very long list of packages.
 
 ### 3. Install a package
 
-Before you can install any package, there is a new feature called Container Image Security Enforcement. IBM Container Image Security Enforcement is available as a Kubernetes chart. IBM Container Image Security Enforcement is enabled by default during the IBM Cloud Private installation.
+Before you can install any package, there is a new feature called **Container Image Security Enforcement**. IBM Container Image Security Enforcement is available as a Kubernetes chart. IBM Container Image Security Enforcement is enabled by default during the IBM Cloud Private installation.
 
 For the purpose of this exercise and to avoid security control on the imported images, we are going to delete this feature (it can be added thru a chart in the catalog ) :
 
-`helm delete --purge cise --tls`
+`helm delete --purge  image-security-enforcement --tls`
 
 Now we can install any package and any image (without the security enforcement). For example, to install the WordPress package, run the following command:
 
@@ -297,7 +297,7 @@ spec:
      nodePort: 30072
 ````
 
-- The services defines the accessability of a pod. This service is of type NodePort, which exposes an internal Port (8080) into an externally accessible nodePort through the proxy node (here port 30072)
+- The services defines the accessibility of a pod. This service is of type NodePort, which exposes an internal Port (8080) into an externally accessible nodePort through the proxy node (here port 30072)
 - How does a service know which pod are associated with it?  From the selector(s) that would select all pods with the same label(s) to be load balanced.
 
 # Task 4: Define a Helm chart
