@@ -251,7 +251,7 @@ helm repo add ibm-charts https://raw.githubusercontent.com/IBM/charts/master/rep
 Then install Microclimate:
 
 ```
-helm install --name microclimate --set hostName=microclimate.<icp-proxy>.nip.io --set jenkins.Master.HostName=jenkins.<icp-proxy>.nip.io ibm-charts/ibm-microclimate --tls
+helm install --name microclimate --set global.rbac.serviceAccountName=micro-sa,jenkins.rbac.serviceAccountName=pipeline-sa --set hostName=microclimate.<icp-proxy>.nip.io --set jenkins.Master.HostName=jenkins.<icp-proxy>.nip.io ibm-charts/ibm-microclimate --tls
 ```
 > **VERY IMPORTANT** : Change **icp-proxy**  with the **ipaddress** of the ICP Cluster.
 > It can take a few minutes before you can see the following results:
