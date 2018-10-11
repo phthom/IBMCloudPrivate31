@@ -125,6 +125,7 @@ After you have initialize helm client. Try the following command to see the vers
 
 `helm version --tls`
 
+
 Results:
 ```console 
 # helm version --tls
@@ -133,6 +134,10 @@ Server: &version.Version{SemVer:"v2.9.1+icp", GitCommit:"843201eceab24e7102ebb87
 
 ```
 > The helm Client and server should be the same version (i.e. **version 2.9.1**)
+> If you get some X509 error the also type that command:
+
+`cp ~/.kube/mycluster/*.pem ~/.helm/`
+
 
 ### 7. Access to the ICP container registry
 
@@ -178,7 +183,6 @@ Now we can install any package and any image (without the security enforcement).
 
 
 ### 4. List the package
-
 
 `helm list --tls`
 
