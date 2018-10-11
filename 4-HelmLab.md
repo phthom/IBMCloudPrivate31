@@ -478,9 +478,9 @@ So the service should look as follows:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "hellonginx.fullname" . }}
   labels:
-    app: {{ template "name" . }}
+    app: {{ template "hellonginx.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -493,7 +493,7 @@ spec:
       nodePort: {{ .Values.service.nodePort }}
       name: {{ .Values.service.name }}
   selector:
-    app: {{ template "name" . }}
+    app: {{ template "hellonginx.name" . }}
     release: {{ .Release.Name }}
 ```
 ### 3. Check the chart
