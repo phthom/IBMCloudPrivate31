@@ -1,15 +1,17 @@
+This lab is compatible with ICP version 3.1![icp000](images/icp000.png)
 
 
-
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Helm Lab
- </b></a></div>
 
 ---
 # Helm Lab
 ---
 
+This lab is compatible with ICP version 3.1
+
+
+
 ![helmlogo2](images/helmlogo2.png)
+
 This lab is compatible with ICP version 3.1
 ---
 
@@ -191,7 +193,7 @@ Results :
 ```
  NAME                REVISION    UPDATED                     STATUS      CHART              NAMESPACE
  my-wordpress        1           Wed Jun 28 22:15:13 2017    DEPLOYED    wordpress-0.6.5    default
- ```
+```
 
 ### 5. Delete the package
 
@@ -299,7 +301,7 @@ spec:
    - protocol: TCP
      port: 8080
      nodePort: 30072
-````
+​````
 
 - The services defines the accessibility of a pod. This service is of type NodePort, which exposes an internal Port (8080) into an externally accessible nodePort through the proxy node (here port 30072)
 - How does a service know which pod are associated with it?  From the selector(s) that would select all pods with the same label(s) to be load balanced.
@@ -332,7 +334,7 @@ Look at **values.yaml** and **modify it**. Prepare to deploy **3** replicas of t
 
 Replace the service section and choose a port (like 30073 for instance) with the following code:
 
-```console
+​```console
   name: hellonginx-service
   type: NodePort
   externalPort: 80  
@@ -392,7 +394,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-````
+​````
 
 
 Review deployment template:
@@ -407,52 +409,52 @@ kind: Deployment
 metadata:
   name: {{ template "hellonginx.fullname" . }}
   labels:
-    app: {{ template "hellonginx.name" . }}
-    chart: {{ template "hellonginx.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+​    app: {{ template "hellonginx.name" . }}
+​    chart: {{ template "hellonginx.chart" . }}
+​    release: {{ .Release.Name }}
+​    heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
-    matchLabels:
-      app: {{ template "hellonginx.name" . }}
-      release: {{ .Release.Name }}
+​    matchLabels:
+​      app: {{ template "hellonginx.name" . }}
+​      release: {{ .Release.Name }}
   template:
-    metadata:
-      labels:
-        app: {{ template "hellonginx.name" . }}
-        release: {{ .Release.Name }}
-    spec:
-      containers:
-        - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-          resources:
+​    metadata:
+​      labels:
+​        app: {{ template "hellonginx.name" . }}
+​        release: {{ .Release.Name }}
+​    spec:
+​      containers:
+​        - name: {{ .Chart.Name }}
+​          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+​          imagePullPolicy: {{ .Values.image.pullPolicy }}
+​          ports:
+​            - name: http
+​              containerPort: 80
+​              protocol: TCP
+​          livenessProbe:
+​            httpGet:
+​              path: /
+​              port: http
+​          readinessProbe:
+​            httpGet:
+​              path: /
+​              port: http
+​          resources:
 {{ toYaml .Values.resources | indent 12 }}
-    {{- with .Values.nodeSelector }}
-      nodeSelector:
+​    {{- with .Values.nodeSelector }}
+​      nodeSelector:
 {{ toYaml . | indent 8 }}
-    {{- end }}
-    {{- with .Values.affinity }}
-      affinity:
+​    {{- end }}
+​    {{- with .Values.affinity }}
+​      affinity:
 {{ toYaml . | indent 8 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
-      tolerations:
+​    {{- end }}
+​    {{- with .Values.tolerations }}
+​      tolerations:
 {{ toYaml . | indent 8 }}
-    {{- end }}
+​    {{- end }}
 ```
 
 
@@ -480,21 +482,21 @@ kind: Service
 metadata:
   name: {{ template "hellonginx.fullname" . }}
   labels:
-    app: {{ template "hellonginx.name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+​    app: {{ template "hellonginx.name" . }}
+​    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+​    release: {{ .Release.Name }}
+​    heritage: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.externalPort }}
-      targetPort: {{ .Values.service.internalPort }}
-      protocol: TCP
-      nodePort: {{ .Values.service.nodePort }}
-      name: {{ .Values.service.name }}
+​    - port: {{ .Values.service.externalPort }}
+​      targetPort: {{ .Values.service.internalPort }}
+​      protocol: TCP
+​      nodePort: {{ .Values.service.nodePort }}
+​      name: {{ .Values.service.name }}
   selector:
-    app: {{ template "hellonginx.name" . }}
-    release: {{ .Release.Name }}
+​    app: {{ template "hellonginx.name" . }}
+​    release: {{ .Release.Name }}
 ```
 ### 3. Check the chart
 
@@ -534,7 +536,7 @@ Type the following command and don't forget the dot at the end:
 `helm install --name hellonginx --namespace training --tls .`
 
 Results:
-```console
+​```console
 # helm install --name hellonginx --namespace training --tls .
 NAME:   hellonginx
 LAST DEPLOYED: Thu Apr 19 23:49:47 2018
@@ -671,7 +673,7 @@ First, package the helm chart as a tgz file:
 ```console
 # helm package hellonginx
 Successfully packaged chart and saved it to: /root/hellonginx-0.1.0.tgz
-````
+​````
 
 **Login**to the master:
 
@@ -682,7 +684,7 @@ Then, use the **cloudctl catalog**command to load the chart:
 `cloudctl catalog load-helm-chart --archive /root/hellonginx-0.1.0.tgz`
 
 **Results**
-```console
+​```console
 # cloudctl catalog load-helm-chart --archive /root/hellonginx-0.1.0.tgz
 Loading helm chart
 Loaded helm chart
@@ -721,8 +723,5 @@ Of course, you can customize the README.MD and add an icon to make the chart mor
 You successfully created and managed charts to deploy applications on the IBM Cloud Private.
 
 
----
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Helm Lab
- </b></a></div>
+![icp000](images/icp000.png)

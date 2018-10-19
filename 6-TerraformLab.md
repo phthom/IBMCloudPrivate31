@@ -1,18 +1,19 @@
 
 
+![icp000](images/icp000.png)
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Terraform Lab
- </b></a></div>
 
 
 ---
 # Terraform Lab
 ---
 
+This lab is compatible with ICP version 3.1
+
+
 
 ![](./images/Terraform-logo.png)
-This lab is compatible with ICP version 3.1
+
 
 
 Terraform is a tool for building, changing, and versioning **infrastructure** safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
@@ -40,8 +41,8 @@ The infrastructure Terraform can manage includes low-level components such as co
 - [Task 8: Using script to configure the VM](#task-8--using-script-to-configure-the-vm)
 - [Congratulations](#congratulations)
 ---
- 
- 
+
+
 # Task 1: Getting IBM Cloud Infra information
 
 
@@ -177,7 +178,7 @@ If you are not in the terra directory, then move to it :
 Create a new file called **main.tf**
 The main.tf file is a template that will contain all the VM definitions with variables.
 Here is an example (just change the **Username** and **APIKey** with you own values) :
- 
+
 ```console
 provider "softlayer" {
   username = "Phil"
@@ -682,9 +683,5 @@ where the vm-id is the number found on the list of VMs.
 You have successfully used **Terraform**, the ultimate open source tool for using **Infrastructure as code** (IaC) to create a VM in IBM Cloud Infrastructure and you have been able to install automatically **IBM Cloud Private**.
 
 
-----
 
-
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Terraform Lab
- </b></a></div>
+![icp000](images/icp000.png)

@@ -1,17 +1,13 @@
+ ![icp000](images/icp000.png)
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Kubernetes Lab
- </b></a></div>
- 
- 
 ---
 # Kubernetes Lab
 ---
 
-
+This lab is compatible with ICP version 3.1
 
 ![kube](images/kube2.png)
-This lab is compatible with ICP version 3.1
+
 
 ### Table of Contents
 
@@ -61,13 +57,13 @@ If you get an error, execute the following script that we created in the install
 ### 2.Modify your hosts file on your laptop
 
 On your machine (your **laptop** or your desktop), modify your **hosts** file so that you can access the master in a browser.
-    
+​    
 Edit the hosts file on your laptop and add the following line at the end (replace the ipaddress with yours) :    
 ```
     ...     
     ipaddress	mycluster.icp
 ```
-    
+
 
 ### 3. Download a GIT repo for this exercise
 
@@ -76,7 +72,7 @@ Now go back to the **Ubuntu VM** and download the samples using Git :
 `cd`
 
 `git clone https://github.com/IBM/container-service-getting-started-wt.git`
-	
+​	
 ![git](images/git.png)
 
 
@@ -99,9 +95,9 @@ To see the image, use the command:
 Log in as user `admin` with password `admin`.
 
 `docker login mycluster.icp:8500`
-    
+​    
 `docker push mycluster.icp:8500/default/hello-world`
- 
+
  Your output should look like this.
 
 ![docker login and push](images/dockerpush.png)
@@ -123,7 +119,7 @@ View your image using `Menu > Container Images`.
 Use your image to create a kubernetes deployment with the following command.
 
 `kubectl run hello-world-deployment --image=mycluster.icp:8500/default/hello-world`
-  
+
 ![deploy](images/deploy.png)
 
 
@@ -132,8 +128,8 @@ Use your image to create a kubernetes deployment with the following command.
 Create a service to access your running container using the following command.
 
 `kubectl expose deployment/hello-world-deployment --type=NodePort --port=8080 --name=hello-world-service --target-port=8080`
- 
-  
+
+
 Your output should be:
 
 ![expose service](images/service.png)
@@ -156,14 +152,14 @@ The service is accessed through the IP address of the proxy node on the NodePort
 Yours may be different. Open a Firefox browser window or tab and go to the URL of your master node with your NodePort number, such as `http://mycluster.icp:30246`. Your output should look like this.
 
  ![Helloworld](images/browser1.png)
- 
+
 
 ### 12. Cluster resources
 
 You can view much of the information on your cluster resources visually through the IBM Cloud Private console, similar to information you might have viewed in the Kubernetes Dashboard. That is the subject of our next demo. As an alternative, you can obtain text-based information on all the resources running in your cluster using the following command.
 
 `kubectl describe all`
- 
+
 
     The amount of output is too large to list here.
 
@@ -180,7 +176,7 @@ For this lab, you need a running deployment with a single replica. First, we cle
 
 To do so, use the following commands :
 - To remove the deployment, use:
- 
+
 `kubectl delete deployment hello-world-deployment`
 - To remove the service, use: 
 
@@ -213,7 +209,10 @@ To see your changes being rolled out, you can run:
 `kubectl rollout status deployment/hello-world`
 
 The rollout might occur so quickly that the following messages might not display:
-```
+
+
+
+```console
 $ kubectl rollout status deployment/hello-world
 Waiting for rollout to finish: 1 of 10 updated replicas are available...
 Waiting for rollout to finish: 2 of 10 updated replicas are available...
@@ -225,16 +224,15 @@ Waiting for rollout to finish: 7 of 10 updated replicas are available...
 Waiting for rollout to finish: 8 of 10 updated replicas are available...
 Waiting for rollout to finish: 9 of 10 updated replicas are available...
 deployment "hello-world" successfully rolled out
-````
+```
 
 Once the rollout has finished, ensure your pods are running by using: kubectl get pods.
-
 You should see output listing 10 replicas of your deployment:
-
 `kubectl get pods`
 
 Here is the result:
-```
+
+```console
 NAME                          READY     STATUS    RESTARTS   AGE
 hello-world-562211614-1tqm7   1/1       Running   0          1d
 hello-world-562211614-1zqn4   1/1       Running   0          2m
@@ -276,7 +274,9 @@ Run kubectl rollout status deployment/hello-world or kubectl get replicasets to 
 
 `kubectl rollout status deployment/hello-world`
 
-```
+Results:
+
+```console
 => kubectl rollout status deployment/hello-world
 Waiting for rollout to finish: 2 out of 10 new replicas have been updated...
 Waiting for rollout to finish: 3 out of 10 new replicas have been updated...
@@ -311,7 +311,9 @@ Waiting for rollout to finish: 9 of 10 updated replicas are available...
 Waiting for rollout to finish: 9 of 10 updated replicas are available...
 Waiting for rollout to finish: 9 of 10 updated replicas are available...
 deployment "hello-world" successfully rolled out
-````
+```
+
+
 
 Finally, use that command to see the result:
 
@@ -397,8 +399,13 @@ Congratulations! You deployed the second version of the app. You had to use fewe
 
 ---
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Kubernetes Lab
- </b></a></div>
+![icp000](images/icp000.png)
 
 ---
+
+
+
+
+
+
+

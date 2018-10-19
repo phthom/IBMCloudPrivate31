@@ -1,9 +1,7 @@
 
 
+![icp000](images/icp000.png)
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Microclimate Lab
- </b></a></div>
 
 
 ---
@@ -40,7 +38,6 @@ Microclimate will guide you thru the creation of complete project including all 
 - [Task 4: Import and deploy an application](#task-4--import-and-deploy-an-application)
 - [Task 5: Use a pipeline](#task-5--use-a-pipeline)
 - [Congratulations](#congratulations)
-
 
 ---
 
@@ -323,7 +320,7 @@ NAME                                   DESIRED   CURRENT   UP-TO-DATE   AVAILABL
 microclimate-ibm-microclimate          1         1         1            1           4m
 microclimate-ibm-microclimate-devops   1         1         1            1           4m
 microclimate-jenkins                   1         1         1            1           4m
-``` 
+```
 
 Finally get access to the Microclimate portal with the following link in your browser:
 
@@ -449,9 +446,6 @@ Wait until the progression ends:
 
 You have successfully created and installed a microservice application with Microclimate.
 
-----
 
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Microclimate Lab
- </b></a></div>
+![icp000](images/icp000.png)

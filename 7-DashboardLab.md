@@ -1,13 +1,10 @@
 
 
-
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Dashboard Lab
- </b></a></div>
+![icp000](images/icp000.png)
 
 ---
 # Dashboard Lab
----
+This lab is compatible with ICP version 3.1
 
 ![](./images/dashboard-ui.png)
 This lab is compatible with ICP version 3.1
@@ -30,8 +27,8 @@ The purpose of this lab is to install the dashboard in the IBM Cloud Private Clu
 - [Task 6: Navigate in the Dashboard](#task-6--navigate-in-the-dashboard)
 - [Congratulations](#congratulations)
 ---
- 
- 
+
+
 # Task 1: Download the manifest file
 
 To get the latest version of the Kubernetes Dashboard, you can get it on the following link :
@@ -44,7 +41,7 @@ And then the deployment file can be found at :
 wget https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 ```
 
- 
+
 # Task 2: Modify the manifest file
 
 Edit the file you just downloaded :
@@ -201,6 +198,5 @@ You have successfully installed, deployed and customized the Kubernetes Dashboar
 
 
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Dashboard Lab
- </b></a></div>
+![icp000](images/icp000.png)
+

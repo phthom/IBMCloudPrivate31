@@ -1,17 +1,17 @@
 
 
+![icp000](images/icp000.png)
 
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
- Installing IBM Cloud Private
- </b></a></div>
 
 ---
-# Single Node Installation of IBM Cloud Private
+# Single Node Installation - IBM Cloud Private
 ---
+
+This Lab is compatible with ICP version 3.1.0
 
 ![ICP Logo](./images/logoicp.png)
-This Lab is compatible with ICP version 3.1.0.
+
 
 
 # Table of Content
@@ -776,11 +776,10 @@ These 5 lines contain a token that change every 12 hours. So then, you generally
 
 A connect2icp.sh script is provided to avoid this problem. 
 
-
 ---
 # End of Appendix
 ---
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
- Installing IBM Cloud Private
- </b></a></div>
+
+
+![icp000](images/icp000.png)

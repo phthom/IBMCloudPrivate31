@@ -1,19 +1,17 @@
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Docker Lab
- </b></a></div>
- 
- 
+![icp000](images/icp000.png)
+
+
+
 ---
 # Docker Lab
 ---
 
-
-
- 
-![Docker Logo](./images/docker2.png)
 This lab is compatible with ICP version 3.1
- 
- ---
+
+![Docker Logo](./images/docker2.png)
+
+
+---
 
 ## Table of Contents
 
@@ -38,7 +36,7 @@ This lab is compatible with ICP version 3.1
     + [1. Our First Dockerfile](#1-Our-First-Dockerfile)
     + [2. Our Web Application](#2-Our-Web-Application)
   - [Conclusion](#conclusion)
-   
+
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -54,14 +52,14 @@ Before starting, login to the Ubuntu VM as **root**.
 
 
 ### 1. Launch a shell and confirm that docker is installed.
-   
+
    The version number isn't particularly important.
    However, you can see both the client (CLI) and the server (engine).
 
 `docker version`
-  
+
 ![Docker Version](./images/CheckDocker.png)
-  
+
 ### 2. As with all new computer things, it is obligatory that we start with "hello-world"
 
 `docker run hello-world`
@@ -82,7 +80,7 @@ Before starting, login to the Ubuntu VM as **root**.
  `docker images hello-world`
 
 ![docker images](./images/dockerimages.png)  
-  
+
 
 ### 5. From where was the `hello-world` image pulled? 
 
@@ -106,14 +104,14 @@ The running image is called a container. Let us run a more typical image; this i
 Notice only the first part of that long hex id is displayed. Typically this is more than enough to uniquely identify that container. `docker ps` provides information about when the container was created, how long it has been running, then name of the image as well as the name of the container. Note that each container must have a unique name. You can specify a name for each container as long as it is unique.
 
 `docker ps | grep couchdb`
- 
+
 ![docker ps](./images/multipledb2.png)
-  
+
 
 ### 8. An image can be run multiple times. Launch another container for the couchdb image.
 
 `docker run -d couchdb`
-    
+​    
 ![Multiple CouchDB](./images/multipledb.png)    
 
 ### 9. Now we have two containers running the couchdb database. 
@@ -139,7 +137,7 @@ Stop the most recent container and then check to see what's running.
 ### 11. Stop the other container and see what is running.
 
 `docker stop c3703c8648a6`
-   
+
 `docker ps | grep couchdb`
 
 ![Stop another container](./images/ps5.png)    
@@ -147,9 +145,9 @@ Stop the most recent container and then check to see what's running.
 ### 12. Notice the image still exists.
 
 `docker images couchdb`
-  
+
 ![image is still there](./images/images5.png)    
-  
+
   
 
 ### 13. Did you forget about the hello-world image? 
@@ -157,9 +155,9 @@ Stop the most recent container and then check to see what's running.
 Go ahead and delete the couchdb image and double check that it is gone.
 
 `docker rmi couchdb`
- 
+
 ![error when removing the image](./images/images6.png)   
- 
+
 
 ### 14. Oops, we can't delete that image until we delete the "couchdb" container. 
 > Note the `docker ps -a` will show us all the containers, not just the ones that are running but also the ones that stop.
@@ -168,7 +166,7 @@ You will noticed that all containers that you are listing have been stopped.
 `docker ps -a | grep couchdb`
 
 ![Listing past images](./images/rmi.png)  
- 
+
  
 
 ### 15. Delete the couchdb container, delete the couchdb image, and make sure it is gone. You can leave hello-world.
@@ -176,18 +174,18 @@ You will noticed that all containers that you are listing have been stopped.
 `docker rm cde802ef4a40 c3703c8648a6 bceece7628dc 676fe6a8eb5f`
 
 ![removing past images](./images/rm.png)  
- 
+
 `docker rmi couchdb`
- 
+
 ![removing the image](./images/rmi2.png)  
- 
- 
+
+
 `docker ps -a | grep couchdb`
 
 ![Listing past images](./images/images7.png)
- 
+
  >***Note:*** Docker images and containers can be referenced by **name** or by **id**. 
-  
+
 
 
 # Task 2 - Building Docker Images
@@ -382,11 +380,8 @@ You should see :
 
 # Conclusion
 
-Congratulations, you have successfully completed this Containers lab!.  You've just deployed your first Docker-based web app on IBM Cloud Private!  In this lab, you learned how to tag and push local images to IPC, inspect pushed images for security vulnerabilities, and run hosted multi-container applications on IBM Containers.
-
+Congratulations, you have successfully completed this Containers lab!.  You've just deployed your first Docker-based web app on IBM Cloud Private!  In this lab, you learned how to tag and push local images to ICP, inspect pushed images for security vulnerabilities, and run hosted multi-container applications on IBM Containers.
 
 ---
 
-<div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
-IBM Cloud Private - Docker Lab
- </b></a></div>
+![icp000](images/icp000.png)

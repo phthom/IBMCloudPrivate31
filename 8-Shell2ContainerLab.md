@@ -1,6 +1,10 @@
-
 ---
+![icp000](images/icp000.png)
+
+
+
 # Getting access to a shell into a Container
+
 ---
 This lab is compatible with ICP version 3.1
 
@@ -93,20 +97,19 @@ In your shell, create an index.html file in the /usr/share/nginx/html directory:
 
 In your shell, add the curl command : 
 
-```
+```console
 apt-get update
 apt-get install curl
-````
+```
 
 Then send a GET request to the nginx server:
-
 `curl localhost`
 
 The output shows the text that you wrote to the index.html file:
 
-```
+```console
 Hello shell demo
-````
+```
 
 When you are finished with your shell, enter exit.
 
@@ -127,9 +130,16 @@ kubectl exec shell-demo cat /proc/1/mounts
 ```
 
 > Note : Opening a shell when a Pod has more than one Container
-If a Pod has more than one Container, use --container or -c to specify a Container in the kubectl exec command. For example, suppose you have a Pod named my-pod, and the Pod has two containers named main-app and helper-app. The following command would open a shell to the main-app Container.
+> If a Pod has more than one Container, use --container or -c to specify a Container in the kubectl exec command. For example, suppose you have a Pod named my-pod, and the Pod has two containers named main-app and helper-app. The following command would open a shell to the main-app Container.
 
 `kubectl exec -it my-pod --container main-app -- /bin/bash`
 
+
+
 ## End of Lab
 
+# 
+
+------
+
+![icp000](images/icp000.png)
